@@ -3,12 +3,16 @@ import { css } from "lit";
 export const styles = css`
 
 #clockContainer {
+    display:flex;
+    justify-content: center;
     background-color: whitesmoke;
     border-radius: 50%;
     border: 1px solid black;
     position: relative;
     height: 30vw;
     width: 30vw;
+    min-width:340px;
+    min-height:340px;
 }
 #hour,
 #minute,
@@ -48,11 +52,11 @@ export const styles = css`
     box-shadow: 0 2px 2px;
 }
 .indicator{
-    height: 48%;
+    height: 48.5%;
     border-top: .5vw solid dimgray;
     background: none;
     position: absolute;
-    left: calc(50% - 1px);
+    /* left: calc(50% - 1px); */
     width: 4px;
     background: none;
     transform-origin: bottom center;
@@ -61,5 +65,14 @@ export const styles = css`
     position: relative;
     margin-right: -.4vw;
     font-size: 2vw;
+}
+@media screen and (max-width :512px){
+    #clockContainer {
+        height: 95vw;
+        width: 95vw;
+    }
+    .indicator-text{
+        font-size:4vw;
+    }
 }
 ` 
